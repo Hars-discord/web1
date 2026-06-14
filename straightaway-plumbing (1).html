@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Straight Away Plumbing | Sydney's Most Trusted Plumber</title>
+  <meta name="description" content="Straight Away Plumbing – Schofields & Sydney's most reliable 24/7 emergency plumber. Fast response, fair pricing, 5-star rated. Call Todd now: 0403 322 290." />
+  <meta name="keywords" content="plumber Schofields, emergency plumber Sydney, blocked drain, plumber 24 hours, Straight Away Plumbing" />
+  <meta property="og:title" content="Straight Away Plumbing | 24/7 Emergency Plumber Sydney" />
+  <meta property="og:description" content="5-star rated plumber serving Schofields & all Sydney. Fast, honest, no call-out fee." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --navy:#0b1220;--navy-mid:#131e30;--blue:#1a6eff;--blue-bright:#3d8bff;
+      --white:#ffffff;--off-white:#f0f4ff;--text:#c8d4e8;--text-dim:#6b7a99;
+      --border:rgba(255,255,255,0.07);--card-bg:rgba(255,255,255,0.035);
+      --radius:16px;--radius-sm:10px;--transition:0.55s cubic-bezier(0.22,1,0.36,1)
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--navy);color:var(--text);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+    ::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--navy)}::-webkit-scrollbar-thumb{background:var(--blue);border-radius:99px}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;transition:background .4s,padding .4s,backdrop-filter .4s}
+    nav.scrolled{background:rgba(11,18,32,.88);backdrop-filter:blur(20px);padding:14px 48px;border-bottom:1px solid var(--border)}
+    .nav-logo{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--white);letter-spacing:-.02em}
+    .nav-logo span{color:var(--blue)}
+    .nav-links{display:flex;gap:36px;list-style:none}
+    .nav-links a{color:var(--text);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.02em;transition:color .25s}
+    .nav-links a:hover{color:var(--white)}
+    .nav-cta{background:var(--blue);color:var(--white);padding:10px 22px;border-radius:99px;font-size:.85rem;font-weight:600;text-decoration:none;transition:background .25s,transform .25s,box-shadow .25s;box-shadow:0 0 20px rgba(26,110,255,.3)}
+    .nav-cta:hover{background:var(--blue-bright);transform:translateY(-1px);box-shadow:0 0 32px rgba(26,110,255,.5)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none}
+    .hamburger span{display:block;width:22px;height:2px;background:var(--white);border-radius:99px;transition:.3s}
+    .mobile-menu{display:none;position:fixed;inset:0;z-index:99;background:var(--navy);flex-direction:column;align-items:center;justify-content:center;gap:32px}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{color:var(--white);text-decoration:none;font-size:1.6rem;font-family:'Syne',sans-serif;font-weight:700;transition:color .2s}
+    .mobile-menu a:hover{color:var(--blue)}
+    .mobile-close{position:absolute;top:24px;right:24px;font-size:2rem;color:var(--white);cursor:pointer;background:none;border:none}
+
+    /* HERO */
+    #hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding:120px 48px 80px}
+    .hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 60% 40%,rgba(26,110,255,.12) 0%,transparent 70%),radial-gradient(ellipse 50% 80% at 10% 80%,rgba(26,110,255,.06) 0%,transparent 60%),var(--navy)}
+    .hero-grid{position:absolute;inset:0;opacity:.04;background-image:linear-gradient(var(--blue) 1px,transparent 1px),linear-gradient(90deg,var(--blue) 1px,transparent 1px);background-size:60px 60px}
+    .hero-orb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none}
+    .hero-orb-1{width:600px;height:600px;background:radial-gradient(circle,rgba(26,110,255,.15) 0%,transparent 70%);top:-100px;right:-100px;animation:pulse 8s ease-in-out infinite}
+    .hero-orb-2{width:400px;height:400px;background:radial-gradient(circle,rgba(26,110,255,.08) 0%,transparent 70%);bottom:0;left:5%;animation:pulse 12s ease-in-out infinite 2s}
+    @keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.15);opacity:.7}}
+    .hero-inner{position:relative;z-index:1;max-width:1200px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,110,255,.12);border:1px solid rgba(26,110,255,.25);padding:6px 14px;border-radius:99px;font-size:.75rem;font-weight:600;letter-spacing:.08em;color:var(--blue-bright);text-transform:uppercase;margin-bottom:24px}
+    .hero-badge-dot{width:6px;height:6px;background:var(--blue-bright);border-radius:50%;animation:blink 2s ease-in-out infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+    h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,5vw,4.4rem);font-weight:800;line-height:1.05;color:var(--white);letter-spacing:-.03em;margin-bottom:24px}
+    h1 em{font-style:normal;color:var(--blue)}
+    .hero-sub{font-size:1.05rem;color:var(--text);max-width:480px;margin-bottom:40px;line-height:1.7}
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+    .btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--white);padding:15px 32px;border-radius:99px;font-size:.95rem;font-weight:600;text-decoration:none;transition:var(--transition);box-shadow:0 0 30px rgba(26,110,255,.35);border:none;cursor:pointer;font-family:'Inter',sans-serif}
+    .btn-primary:hover{background:var(--blue-bright);transform:translateY(-2px);box-shadow:0 0 50px rgba(26,110,255,.55)}
+    .btn-secondary{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--white);padding:15px 32px;border-radius:99px;font-size:.95rem;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.15);transition:var(--transition);cursor:pointer;font-family:'Inter',sans-serif}
+    .btn-secondary:hover{border-color:rgba(255,255,255,.35);background:rgba(255,255,255,.05);transform:translateY(-2px)}
+    .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:56px}
+    .hero-stat{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;transition:border-color .3s}
+    .hero-stat:hover{border-color:rgba(26,110,255,.3)}
+    .hero-stat-num{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:var(--white);letter-spacing:-.03em}
+    .hero-stat-num span{color:var(--blue)}
+    .hero-stat-label{font-size:.78rem;color:var(--text-dim);margin-top:2px}
+    .hero-visual{display:flex;align-items:center;justify-content:center;position:relative}
+    .hero-card{background:var(--card-bg);border:1px solid var(--border);border-radius:24px;padding:40px;width:100%;max-width:380px;position:relative;overflow:hidden}
+    .hero-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% 0%,rgba(26,110,255,.1) 0%,transparent 60%)}
+    .hero-card-icon{font-size:3rem;margin-bottom:20px;position:relative}
+    .hero-card-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--white);margin-bottom:8px;position:relative}
+    .hero-card-text{font-size:.88rem;color:var(--text-dim);position:relative}
+    .hero-card-divider{height:1px;background:var(--border);margin:24px 0;position:relative}
+    .hero-card-rating{display:flex;align-items:center;gap:12px;position:relative}
+    .stars{color:#fbbf24;font-size:1rem;letter-spacing:2px}
+    .rating-text{font-size:.82rem;color:var(--text-dim)}
+    .rating-text strong{color:var(--white)}
+    .hero-card-avail{display:flex;align-items:center;gap:8px;margin-top:20px;position:relative}
+    .avail-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;box-shadow:0 0 8px rgba(34,197,94,.6);animation:blink 2s ease-in-out infinite}
+    .avail-text{font-size:.82rem;color:#22c55e;font-weight:600}
+
+    /* SECTIONS */
+    section{padding:100px 48px}
+    .section-inner{max-width:1200px;margin:0 auto}
+    .section-label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:16px}
+    h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:800;color:var(--white);letter-spacing:-.03em;line-height:1.1;margin-bottom:16px}
+    h2 em{font-style:normal;color:var(--blue)}
+    .section-sub{font-size:1rem;color:var(--text-dim);max-width:540px;line-height:1.7;margin-bottom:60px}
+
+    /* TICKER */
+    #social-proof{padding:0;overflow:hidden}
+    .ticker-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .ticker{display:flex;width:max-content;animation:ticker 28s linear infinite}
+    .ticker:hover{animation-play-state:paused}
+    @keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    .ticker-item{display:flex;align-items:center;gap:10px;padding:16px 40px;white-space:nowrap;font-size:.82rem;font-weight:500;color:var(--text-dim)}
+    .ticker-item .t-star{color:#fbbf24}
+    .ticker-item strong{color:var(--white)}
+
+    /* TESTIMONIALS */
+    #testimonials{background:var(--navy-mid)}
+    .reviews-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px}
+    .reviews-score{display:flex;align-items:center;gap:20px;padding:24px 32px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius)}
+    .score-num{font-family:'Syne',sans-serif;font-size:3.5rem;font-weight:800;color:var(--white);line-height:1}
+    .score-stars{display:flex;flex-direction:column;gap:4px}
+    .score-stars .stars{font-size:1.2rem}
+    .score-stars span{font-size:.75rem;color:var(--text-dim)}
+    .reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .review-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:32px;transition:var(--transition);position:relative;overflow:hidden}
+    .review-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--blue),transparent);opacity:0;transition:opacity .35s}
+    .review-card:hover{border-color:rgba(26,110,255,.25);transform:translateY(-4px)}
+    .review-card:hover::before{opacity:1}
+    .review-quote{font-size:2.5rem;color:var(--blue);line-height:1;margin-bottom:12px;font-family:Georgia,serif}
+    .review-text{font-size:.9rem;color:var(--text);line-height:1.7;margin-bottom:24px}
+    .review-author{display:flex;align-items:center;gap:12px}
+    .review-avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),#0047cc);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;color:var(--white);font-size:.9rem;flex-shrink:0}
+    .review-name{font-size:.85rem;font-weight:600;color:var(--white)}
+    .review-meta{font-size:.75rem;color:var(--text-dim)}
+    .review-stars{color:#fbbf24;font-size:.8rem;margin-bottom:16px}
+
+    /* SERVICES */
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service-card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius);padding:36px 32px;transition:var(--transition);position:relative;overflow:hidden}
+    .service-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--blue),#0047cc);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+    .service-card:hover{border-color:rgba(26,110,255,.25);transform:translateY(-6px)}
+    .service-card:hover::after{transform:scaleX(1)}
+    .service-icon{width:52px;height:52px;border-radius:12px;background:rgba(26,110,255,.12);border:1px solid rgba(26,110,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:24px}
+    .service-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:10px}
+    .service-text{font-size:.87rem;color:var(--text-dim);line-height:1.65}
+
+    /* WHY */
+    #why{background:var(--navy-mid)}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .why-list{display:flex;flex-direction:column;gap:28px}
+    .why-item{display:flex;gap:20px;align-items:flex-start}
+    .why-icon{width:44px;height:44px;border-radius:10px;background:rgba(26,110,255,.1);border:1px solid rgba(26,110,255,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .why-title{font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:6px}
+    .why-text{font-size:.85rem;color:var(--text-dim);line-height:1.6}
+    .why-visual{background:var(--card-bg);border:1px solid var(--border);border-radius:24px;padding:40px;position:relative;overflow:hidden}
+    .why-visual::before{content:'';position:absolute;top:-40%;right:-30%;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(26,110,255,.1) 0%,transparent 70%)}
+    .why-numbers{display:grid;grid-template-columns:1fr 1fr;gap:28px;position:relative}
+    .why-num{font-family:'Syne',sans-serif;font-size:2.8rem;font-weight:800;color:var(--white);letter-spacing:-.04em;line-height:1}
+    .why-num span{color:var(--blue)}
+    .why-num-label{font-size:.78rem;color:var(--text-dim);margin-top:6px}
+    .why-divider{height:1px;background:var(--border);grid-column:1/-1;margin:4px 0}
+    .why-trust{margin-top:36px;padding-top:28px;border-top:1px solid var(--border);position:relative}
+    .why-trust-label{font-size:.7rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px}
+    .trust-badges{display:flex;gap:12px;flex-wrap:wrap}
+    .trust-badge{background:rgba(26,110,255,.08);border:1px solid rgba(26,110,255,.2);padding:6px 14px;border-radius:99px;font-size:.72rem;font-weight:600;color:var(--blue-bright)}
+
+    /* PROCESS */
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+    .process-grid::before{content:'';position:absolute;top:28px;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--border),var(--border),transparent)}
+    .process-step{text-align:center;position:relative}
+    .process-num{width:56px;height:56px;border-radius:50%;background:var(--navy-mid);border:2px solid var(--blue);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--blue);margin:0 auto 24px;position:relative;z-index:1;box-shadow:0 0 20px rgba(26,110,255,.2)}
+    .process-title{font-size:.95rem;font-weight:700;color:var(--white);margin-bottom:10px}
+    .process-text{font-size:.82rem;color:var(--text-dim);line-height:1.6}
+
+    /* ABOUT */
+    #about{background:var(--navy-mid)}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .about-badge-row{display:flex;gap:12px;margin-top:36px;flex-wrap:wrap}
+    .about-badge{display:flex;align-items:center;gap:8px;background:rgba(26,110,255,.08);border:1px solid rgba(26,110,255,.15);padding:8px 16px;border-radius:99px;font-size:.78rem;font-weight:600;color:var(--text)}
+    .about-visual{background:var(--card-bg);border:1px solid var(--border);border-radius:24px;padding:48px;text-align:center;position:relative;overflow:hidden}
+    .about-visual::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 100%,rgba(26,110,255,.08) 0%,transparent 70%)}
+    .about-icon-big{font-size:5rem;position:relative;margin-bottom:24px;display:block}
+    .about-visual-title{font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:var(--white);position:relative;margin-bottom:8px}
+    .about-visual-sub{font-size:.85rem;color:var(--text-dim);position:relative}
+
+    /* FAQ */
+    .faq-grid{max-width:720px}
+    .faq-item{border-bottom:1px solid var(--border);overflow:hidden}
+    .faq-question{display:flex;align-items:center;justify-content:space-between;padding:22px 0;cursor:pointer;gap:16px;font-size:.95rem;font-weight:600;color:var(--white);transition:color .2s;background:none;border:none;width:100%;text-align:left;font-family:'Inter',sans-serif}
+    .faq-question:hover{color:var(--blue-bright)}
+    .faq-icon{width:28px;height:28px;border-radius:50%;background:rgba(26,110,255,.1);border:1px solid rgba(26,110,255,.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.9rem;color:var(--blue);transition:transform .3s,background .3s}
+    .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue);color:#fff}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(0.22,1,0.36,1)}
+    .faq-item.open .faq-answer{max-height:200px}
+    .faq-answer-inner{padding-bottom:20px;font-size:.88rem;color:var(--text-dim);line-height:1.7}
+
+    /* CONTACT */
+    #contact{background:var(--navy-mid)}
+    .contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:80px;align-items:start}
+    .contact-info{display:flex;flex-direction:column;gap:24px;margin-top:8px}
+    .contact-item{display:flex;align-items:flex-start;gap:16px;background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:20px 24px;transition:border-color .25s}
+    .contact-item:hover{border-color:rgba(26,110,255,.25)}
+    .contact-item-icon{width:40px;height:40px;border-radius:9px;background:rgba(26,110,255,.1);border:1px solid rgba(26,110,255,.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+    .contact-item-label{font-size:.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px}
+    .contact-item-val{font-size:.95rem;font-weight:600;color:var(--white)}
+    .contact-item-val a{color:inherit;text-decoration:none;transition:color .2s}
+    .contact-item-val a:hover{color:var(--blue-bright)}
+    .form-wrap{background:var(--card-bg);border:1px solid var(--border);border-radius:20px;padding:40px}
+    .form-title{font-family:'Syne',sans-serif;font-size:1.3rem;font-weight:800;color:var(--white);margin-bottom:28px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .form-group{margin-bottom:16px}
+    .form-group label{display:block;font-size:.78rem;font-weight:600;color:var(--text-dim);margin-bottom:8px;letter-spacing:.04em}
+    .form-group input,.form-group textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 16px;color:var(--white);font-size:.9rem;font-family:'Inter',sans-serif;transition:border-color .25s,background .25s;outline:none}
+    .form-group input:focus,.form-group textarea:focus{border-color:rgba(26,110,255,.5);background:rgba(26,110,255,.05)}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-dim)}
+    .form-group textarea{resize:vertical;min-height:110px}
+    .form-submit{width:100%;background:var(--blue);color:var(--white);border:none;border-radius:99px;padding:15px 32px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:'Inter',sans-serif;transition:var(--transition);box-shadow:0 0 24px rgba(26,110,255,.3)}
+    .form-submit:hover:not(:disabled){background:var(--blue-bright);transform:translateY(-2px);box-shadow:0 0 40px rgba(26,110,255,.5)}
+    .form-submit:disabled{opacity:.6;cursor:not-allowed}
+    .form-msg{margin-top:16px;padding:14px 18px;border-radius:var(--radius-sm);font-size:.88rem;display:none}
+    .form-msg.success{background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);color:#4ade80;display:block}
+    .form-msg.error{background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.25);color:#f87171;display:block}
+
+    /* CTA */
+    #cta{text-align:center;position:relative;overflow:hidden}
+    #cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 80% at 50% 50%,rgba(26,110,255,.12) 0%,transparent 70%)}
+    #cta .section-inner{position:relative}
+    #cta h2{font-size:clamp(2.2rem,4vw,3.5rem);max-width:700px;margin:0 auto 20px}
+    #cta p{max-width:500px;margin:0 auto 44px;color:var(--text-dim)}
+    .cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .cta-phone{font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--white);letter-spacing:-.02em;display:block;margin-bottom:32px}
+    .cta-phone a{color:var(--blue);text-decoration:none;transition:color .2s}
+    .cta-phone a:hover{color:var(--blue-bright)}
+
+    /* FOOTER */
+    footer{padding:40px 48px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+    .footer-logo{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:var(--white)}
+    .footer-logo span{color:var(--blue)}
+    .footer-copy{font-size:.78rem;color:var(--text-dim)}
+    .footer-links{display:flex;gap:24px}
+    .footer-links a{font-size:.78rem;color:var(--text-dim);text-decoration:none;transition:color .2s}
+    .footer-links a:hover{color:var(--white)}
+
+    /* REVEAL */
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(0.22,1,0.36,1),transform .7s cubic-bezier(0.22,1,0.36,1)}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}.reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}.reveal-delay-5{transition-delay:.5s}
+    @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.ticker{animation:none}}
+
+    /* RESPONSIVE */
+    @media(max-width:1024px){
+      .hero-inner,.why-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+      .hero-visual{display:none}
+      .reviews-grid,.services-grid{grid-template-columns:repeat(2,1fr)}
+      .process-grid{grid-template-columns:repeat(2,1fr)}
+      .process-grid::before{display:none}
+    }
+    @media(max-width:768px){
+      section{padding:72px 24px}
+      nav{padding:18px 24px}
+      nav.scrolled{padding:14px 24px}
+      .nav-links,.nav-cta{display:none}
+      .hamburger{display:flex}
+      .reviews-grid,.services-grid{grid-template-columns:1fr}
+      .reviews-header{flex-direction:column;align-items:flex-start;gap:24px}
+      .form-row{grid-template-columns:1fr}
+      footer{flex-direction:column;gap:16px;text-align:center}
+      .hero-stats{grid-template-columns:1fr 1fr}
+      h1{font-size:2.4rem}
+    }
+  </style>
+</head>
+<body>
+
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-logo">Straight<span>Away</span></div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:0403322290" class="nav-cta">📞 Call Now</a>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu">
+  <button class="mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+  <a href="#services" onclick="closeMobile()">Services</a>
+  <a href="#why" onclick="closeMobile()">Why Us</a>
+  <a href="#testimonials" onclick="closeMobile()">Reviews</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+  <a href="tel:0403322290" class="btn-primary" style="font-size:1.1rem;margin-top:8px;">📞 0403 322 290</a>
+</div>
+
+<section id="hero" aria-label="Hero section">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><span class="hero-badge-dot"></span>Available 24/7 — All Sydney</div>
+      <h1>The Plumber That<br/><em>Shows Up</em> on Time</h1>
+      <p class="hero-sub">Todd and the team at Straight Away Plumbing deliver fast, honest, no-nonsense plumbing across Schofields and greater Sydney — without the runaround, upsell, or call-out fees.</p>
+      <div class="hero-actions">
+        <a href="tel:0403322290" class="btn-primary">📞 0403 322 290</a>
+        <a href="#contact" class="btn-secondary">Get a Free Quote →</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat reveal"><div class="hero-stat-num">5.0<span>★</span></div><div class="hero-stat-label">Google Rating</div></div>
+        <div class="hero-stat reveal reveal-delay-1"><div class="hero-stat-num">46<span>+</span></div><div class="hero-stat-label">5-Star Reviews</div></div>
+        <div class="hero-stat reveal reveal-delay-2"><div class="hero-stat-num">24<span>/7</span></div><div class="hero-stat-label">Emergency Response</div></div>
+        <div class="hero-stat reveal reveal-delay-3"><div class="hero-stat-num">$0</div><div class="hero-stat-label">Call-Out Fee</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <div class="hero-card-icon">🔧</div>
+        <div class="hero-card-title">Straight Away Plumbing</div>
+        <div class="hero-card-text">Schofields &amp; Greater Sydney<br/>Licensed Plumber · ABN Verified</div>
+        <div class="hero-card-divider"></div>
+        <div class="hero-card-rating">
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="rating-text"><strong>5.0</strong> · 46 Google reviews</div>
+          </div>
+        </div>
+        <div class="hero-card-avail">
+          <span class="avail-dot"></span>
+          <span class="avail-text">Open Now — 24 Hours</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="social-proof" aria-label="Review highlights">
+  <div class="ticker-wrap">
+    <div class="ticker">
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"Fixed my shower tap on short notice"</strong> — Ronnie</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"Arrived on time, done in 35 minutes"</strong> — Coleen</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"No upsell. Honest, fast, professional"</strong> — Ronnie</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"Incredibly fast, refreshing workmanship"</strong> — Helaina</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"Very quick service and well priced"</strong> — Google Review</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"Fab job, great price and quality works"</strong> — Google Review</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"Fixed my shower tap on short notice"</strong> — Ronnie</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"Arrived on time, done in 35 minutes"</strong> — Coleen</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"No upsell. Honest, fast, professional"</strong> — Ronnie</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"Incredibly fast, refreshing workmanship"</strong> — Helaina</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"Very quick service and well priced"</strong> — Google Review</span>
+      <span class="ticker-item">·</span>
+      <span class="ticker-item"><span class="t-star">★★★★★</span>&nbsp;<strong>"Fab job, great price and quality works"</strong> — Google Review</span>
+      <span class="ticker-item">·</span>
+    </div>
+  </div>
+</div>
+
+<section id="services" aria-labelledby="services-heading">
+  <div class="section-inner">
+    <div class="reveal"><span class="section-label">What We Do</span><h2 id="services-heading">Every Plumbing Job,<br/><em>Done Right</em></h2><p class="section-sub">From blocked drains to full installs — we handle it all with speed, care, and upfront pricing you can trust.</p></div>
+    <div class="services-grid">
+      <div class="service-card reveal"><div class="service-icon">🚰</div><div class="service-title">Blocked Drains</div><div class="service-text">Kitchen, bathroom, stormwater — we clear blockages fast. Same-day service available using high-pressure jetting and CCTV inspection where needed.</div></div>
+      <div class="service-card reveal reveal-delay-1"><div class="service-icon">🚿</div><div class="service-title">Tap &amp; Shower Repairs</div><div class="service-text">Leaky taps, dripping showerheads, faulty mixers. We diagnose and fix quickly — saving you water and money on your bill.</div></div>
+      <div class="service-card reveal reveal-delay-2"><div class="service-icon">🔥</div><div class="service-title">Hot Water Systems</div><div class="service-text">Installation, repair, and replacement of gas, electric, and solar hot water systems. We carry common parts for fast same-day turnarounds.</div></div>
+      <div class="service-card reveal reveal-delay-3"><div class="service-icon">🚽</div><div class="service-title">Toilet Repairs</div><div class="service-text">Running toilet, cracked bowl, faulty cistern — sorted quickly with no fuss, no mess. Parts stocked on the van.</div></div>
+      <div class="service-card reveal reveal-delay-4"><div class="service-icon">⚠️</div><div class="service-title">Emergency Plumbing</div><div class="service-text">Burst pipes, flooding, gas leaks — we're available 24 hours a day, 7 days a week. We pick up. We show up.</div></div>
+      <div class="service-card reveal reveal-delay-5"><div class="service-icon">🏗️</div><div class="service-title">New Installs &amp; Renos</div><div class="service-text">Bathroom, kitchen, laundry plumbing for renovations and new builds. Thorough, compliant, and tidy every time.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="why" aria-labelledby="why-heading">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <span class="section-label reveal">Why Choose Us</span>
+        <h2 id="why-heading" class="reveal">What Makes Straight Away<br/><em>Different</em></h2>
+        <p class="section-sub reveal" style="margin-bottom:40px;">We built this business on one thing: doing exactly what we say we'll do. Every time.</p>
+        <div class="why-list">
+          <div class="why-item reveal"><div class="why-icon">⏱️</div><div><div class="why-title">We Arrive When We Say</div><div class="why-text">Called at 10:15am, on the doorstep by 12:00pm. Our customers notice because it's rare — we make it our baseline.</div></div></div>
+          <div class="why-item reveal reveal-delay-1"><div class="why-icon">💬</div><div><div class="why-title">Clear Communication, No Surprises</div><div class="why-text">Upfront pricing before we start, plain explanation of the issue, and no hidden charges at the end.</div></div></div>
+          <div class="why-item reveal reveal-delay-2"><div class="why-icon">🚫</div><div><div class="why-title">Zero Upsell Policy</div><div class="why-text">We fix what needs fixing. We don't manufacture problems or push you toward more expensive options.</div></div></div>
+          <div class="why-item reveal reveal-delay-3"><div class="why-icon">📞</div><div><div class="why-title">No Call-Out Fee</div><div class="why-text">We never charge just for showing up. Pricing is job-based, fair, and agreed upfront — always.</div></div></div>
+        </div>
+      </div>
+      <div class="why-visual reveal reveal-delay-2">
+        <div class="why-numbers">
+          <div><div class="why-num">5.0<span>★</span></div><div class="why-num-label">Perfect Google Rating</div></div>
+          <div><div class="why-num">46<span>+</span></div><div class="why-num-label">Verified Reviews</div></div>
+          <div class="why-divider"></div>
+          <div><div class="why-num"><span>&lt;</span>2h</div><div class="why-num-label">Avg Response Time</div></div>
+          <div><div class="why-num">$0</div><div class="why-num-label">Call-Out Fee</div></div>
+        </div>
+        <div class="why-trust">
+          <div class="why-trust-label">Verified &amp; Trusted</div>
+          <div class="trust-badges">
+            <span class="trust-badge">✓ Licensed Plumber</span>
+            <span class="trust-badge">✓ Fully Insured</span>
+            <span class="trust-badge">✓ 24/7 Available</span>
+            <span class="trust-badge">✓ No Upsell</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials" aria-labelledby="testimonials-heading">
+  <div class="section-inner">
+    <div class="reviews-header">
+      <div><span class="section-label reveal">Customer Reviews</span><h2 id="testimonials-heading" class="reveal">What Sydney <em>Says</em></h2></div>
+      <div class="reviews-score reveal"><div class="score-num">5.0</div><div class="score-stars"><div class="stars">★★★★★</div><span>46 Google Reviews</span></div></div>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card reveal">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote">"</div>
+        <p class="review-text">Todd and the team did an amazing quick job. I had a blocked kitchen drain and called them at 10:15am — they were at my house at 12pm on the dot as promised. Fixed the blockage and were done in 35 minutes.</p>
+        <div class="review-author"><div class="review-avatar">CB</div><div><div class="review-name">Coleen Brennen</div><div class="review-meta">5 months ago · Google Review</div></div></div>
+      </div>
+      <div class="review-card reveal reveal-delay-1">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote">"</div>
+        <p class="review-text">Fixed my shower tap on such short notice and arrived on time. Very reasonable price — no upsell or anything. Work done quickly and professionally. Clear communication throughout. Highly recommend!</p>
+        <div class="review-author"><div class="review-avatar">R</div><div><div class="review-name">Ronnie</div><div class="review-meta">4 months ago · Local Guide · Google Review</div></div></div>
+      </div>
+      <div class="review-card reveal reveal-delay-2">
+        <div class="review-stars">★★★★★</div>
+        <div class="review-quote">"</div>
+        <p class="review-text">Such a great experience! They responded incredibly fast and had everything sorted in no time. So refreshing to find a company that provides both quick service and excellent workmanship. Highly recommend!</p>
+        <div class="review-author"><div class="review-avatar">HB</div><div><div class="review-name">Helaina Bayeh</div><div class="review-meta">7 months ago · Google Review</div></div></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px;" class="reveal">
+      <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn-secondary">Read All 46 Reviews on Google →</a>
+    </div>
+  </div>
+</section>
+
+<section id="process" aria-labelledby="process-heading">
+  <div class="section-inner">
+    <div style="text-align:center;max-width:640px;margin:0 auto 64px;" class="reveal">
+      <span class="section-label">How It Works</span>
+      <h2 id="process-heading">From Call to <em>Fixed</em></h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto;">Simple, fast, and always on your terms.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal"><div class="process-num">1</div><div class="process-title">You Call or Message</div><div class="process-text">Reach us any time of day. We pick up. No voicemail maze, no wait times.</div></div>
+      <div class="process-step reveal reveal-delay-1"><div class="process-num">2</div><div class="process-title">We Confirm &amp; Arrive</div><div class="process-text">We give you an exact arrival window and show up on the dot, every time.</div></div>
+      <div class="process-step reveal reveal-delay-2"><div class="process-num">3</div><div class="process-title">Upfront Quote</div><div class="process-text">We diagnose, explain the issue clearly, and give you a fair price before any work begins.</div></div>
+      <div class="process-step reveal reveal-delay-3"><div class="process-num">4</div><div class="process-title">Job Done Right</div><div class="process-text">We complete the work cleanly, test everything, and leave you with a result you're happy with.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="about" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div>
+        <span class="section-label reveal">About Us</span>
+        <h2 id="about-heading" class="reveal">Plumbing Built on<br/><em>Honesty</em></h2>
+        <p class="reveal" style="color:var(--text);line-height:1.8;margin-bottom:20px;">Straight Away Plumbing was built by Todd with a simple idea: plumbing the way it should be. Show up when you say you will. Charge what you quoted. Don't invent problems. Treat people's homes with respect.</p>
+        <p class="reveal reveal-delay-1" style="color:var(--text-dim);line-height:1.8;margin-bottom:20px;">Based in Schofields, we service the entire Sydney region — from the Hills District to the greater North West. We carry stocked vans so we can fix most problems on the first visit, and we're available around the clock for emergencies.</p>
+        <p class="reveal reveal-delay-2" style="color:var(--text-dim);line-height:1.8;">Our 5.0-star rating across 46 reviews isn't a marketing stunt — it's what happens when you simply do what you say you'll do, every single time.</p>
+        <div class="about-badge-row reveal reveal-delay-3">
+          <div class="about-badge"><span>📍</span> Schofields, NSW 2762</div>
+          <div class="about-badge"><span>🔒</span> Fully Insured</div>
+          <div class="about-badge"><span>✓</span> Licensed Plumber</div>
+        </div>
+      </div>
+      <div class="about-visual reveal reveal-delay-2">
+        <span class="about-icon-big">🔧</span>
+        <div class="about-visual-title">Todd &amp; The Team</div>
+        <div class="about-visual-sub">Licensed Plumber · Schofields &amp; Sydney Wide</div>
+        <div style="margin-top:32px;display:flex;flex-direction:column;gap:12px;text-align:left;position:relative;">
+          <div style="display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--text-dim);"><span style="color:#22c55e;font-size:1rem;">✓</span> Licensed &amp; qualified plumber</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--text-dim);"><span style="color:#22c55e;font-size:1rem;">✓</span> Stocked vans for same-day fixes</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--text-dim);"><span style="color:#22c55e;font-size:1rem;">✓</span> Clean, respectful of your home</div>
+          <div style="display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--text-dim);"><span style="color:#22c55e;font-size:1rem;">✓</span> 24/7 emergency availability</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="faq-heading">
+  <div class="section-inner">
+    <div style="max-width:720px;"><span class="section-label reveal">FAQ</span><h2 id="faq-heading" class="reveal">Common <em>Questions</em></h2><p class="section-sub reveal">Everything you need to know before you call.</p></div>
+    <div class="faq-grid reveal">
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">Do you charge a call-out fee?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">No. We never charge a call-out fee. You only pay for the work done — quoted upfront before we start anything.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">How quickly can you come out?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We aim to be on-site within 1–2 hours for most jobs in the Schofields and greater Sydney area. Emergency calls get priority and we're available 24/7.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">What areas do you service?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">We're based in Schofields and service all of greater Sydney — including the Hills District, Blacktown, Parramatta, Castle Hill, and surrounding suburbs. Not sure if we cover your area? Just call us.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">Are you available for emergencies overnight?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. We are open 24 hours a day, 7 days a week. Burst pipe, gas leak, flooding — we pick up and we come out.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">Will I get a quote before work starts?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Always. We assess the job, explain what needs to be done, and give you a clear price before touching anything. No surprises on the invoice.</div></div></div>
+      <div class="faq-item"><button class="faq-question" onclick="toggleFAQ(this)">Are you licensed and insured?<span class="faq-icon">+</span></button><div class="faq-answer"><div class="faq-answer-inner">Yes. Straight Away Plumbing is fully licensed and insured. You're covered from the moment we arrive on site.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="contact-heading">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div>
+        <span class="section-label reveal">Get In Touch</span>
+        <h2 id="contact-heading" class="reveal">Let's Get It <em>Sorted</em></h2>
+        <p class="reveal" style="color:var(--text-dim);margin-bottom:36px;line-height:1.7;">Call us directly for the fastest response, or fill in the form and we'll get back to you promptly.</p>
+        <div class="contact-info">
+          <div class="contact-item reveal"><div class="contact-item-icon">📞</div><div><div class="contact-item-label">Phone</div><div class="contact-item-val"><a href="tel:0403322290">0403 322 290</a></div></div></div>
+          <div class="contact-item reveal reveal-delay-1"><div class="contact-item-icon">📍</div><div><div class="contact-item-label">Location</div><div class="contact-item-val">Schofields Rd, Schofields NSW 2762</div></div></div>
+          <div class="contact-item reveal reveal-delay-2"><div class="contact-item-icon">🕐</div><div><div class="contact-item-label">Hours</div><div class="contact-item-val">Open 24 Hours · 7 Days</div></div></div>
+          <div class="contact-item reveal reveal-delay-3"><div class="contact-item-icon">🌐</div><div><div class="contact-item-label">Service Area</div><div class="contact-item-val">Schofields &amp; Greater Sydney</div></div></div>
+        </div>
+      </div>
+      <div class="form-wrap reveal reveal-delay-1">
+        <div class="form-title">Send Us a Message</div>
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group"><label for="fname">Your Name *</label><input type="text" id="fname" name="name" placeholder="Jane Smith" required autocomplete="name"/></div>
+            <div class="form-group"><label for="femail">Email Address *</label><input type="email" id="femail" name="email" placeholder="jane@example.com" required autocomplete="email"/></div>
+          </div>
+          <div class="form-group"><label for="fphone">Phone Number</label><input type="tel" id="fphone" name="phone" placeholder="0400 000 000" autocomplete="tel"/></div>
+          <div class="form-group"><label for="fmessage">Tell Us About Your Job *</label><textarea id="fmessage" name="message" placeholder="Describe the plumbing issue, your address, and the best time to call..." required></textarea></div>
+          <button type="submit" class="form-submit" id="formSubmit">Send Message →</button>
+          <div class="form-msg" id="formMsg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="cta" aria-labelledby="cta-heading">
+  <div class="section-inner">
+    <span class="section-label reveal">Ready? Let's Go.</span>
+    <h2 id="cta-heading" class="reveal">Got a Plumbing Problem?<br/><em>Call Now.</em></h2>
+    <p class="reveal">We're on. We pick up. We show up.</p>
+    <div class="cta-phone reveal reveal-delay-1"><a href="tel:0403322290">0403 322 290</a></div>
+    <div class="cta-actions reveal reveal-delay-2">
+      <a href="tel:0403322290" class="btn-primary" style="font-size:1rem;padding:16px 36px;">📞 Call Todd Now</a>
+      <a href="#contact" class="btn-secondary" style="font-size:1rem;padding:16px 36px;">Get a Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Straight<span>Away</span> Plumbing</div>
+  <div class="footer-copy">© 2025 Straight Away Plumbing · Schofields, NSW · Licensed &amp; Insured</div>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:0403322290">0403 322 290</a>
+  </div>
+</footer>
+
+<script>
+  // ── WEB3FORMS KEY — ONLY CHANGE THIS LINE ──
+  const WEB3FORMS_KEY = "PASTE_YOUR_KEY_HERE";
+
+  // NAV SCROLL
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // MOBILE MENU
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileClose = document.getElementById('mobileClose');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.add('open');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  mobileClose.addEventListener('click', closeMobile);
+
+  // SCROLL REVEALS
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // FAQ ACCORDION
+  function toggleFAQ(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // CONTACT FORM (Web3Forms)
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('formSubmit');
+    const msg = document.getElementById('formMsg');
+    const name = document.getElementById('fname').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const message = document.getElementById('fmessage').value.trim();
+
+    msg.className = 'form-msg';
+    if (!name || !email || !message) {
+      msg.textContent = 'Please fill in all required fields.';
+      msg.className = 'form-msg error';
+      return;
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      msg.textContent = 'Please enter a valid email address.';
+      msg.className = 'form-msg error';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          name: name,
+          email: email,
+          phone: phone,
+          message: message,
+        }),
+      });
+      const data = await res.json();
+      if (data.success) {
+        msg.textContent = "✓ Message sent! We'll be in touch shortly.";
+        msg.className = 'form-msg success';
+        document.getElementById('contactForm').reset();
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch {
+      msg.textContent = 'Something went wrong. Please call us on 0403 322 290.';
+      msg.className = 'form-msg error';
+    }
+
+    btn.disabled = false;
+    btn.textContent = 'Send Message →';
+  });
+
+  // MAGNETIC BUTTON EFFECT
+  document.querySelectorAll('.btn-primary, .btn-secondary, .nav-cta').forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const r = btn.getBoundingClientRect();
+      const x = e.clientX - r.left - r.width / 2;
+      const y = e.clientY - r.top - r.height / 2;
+      btn.style.transform = `translate(${x * 0.12}px, ${y * 0.12}px)`;
+    });
+    btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
+  });
+</script>
+</body>
+</html>
